@@ -5,6 +5,7 @@
   </head>
   <script  src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script>
+  
 function showNasa()
 {
   twttr.widgets.createTimeline(
@@ -15,11 +16,27 @@ function showNasa()
       document.getElementById("nasaSpace")
   );
 }
+
+function showUser()
+{
+  username = document.getElementById("username").value;
+  twttr.widgets.createTimeline(
+      {
+        sourceType: "profile",
+        screenName: username
+      },
+      document.getElementById("nasaSpace")
+  );
+}
+
   </script>
 
   <body>
 
-<button type="button" name="NASA" onclick='showNasa()'>NASA</button>
+    <button type="button" name="NASA" onclick='showNasa()'>NASA</button>
+    <br><br>
+    <input type="text" id="username">
+    <button type="button" name="ENTER" onclick='showUser()'>GO</button>
 
 <div id='nasaSpace'></div>
 
